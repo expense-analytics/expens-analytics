@@ -103,22 +103,61 @@ let optionsIndonesia = {
 
 
 fetchMonthExpenses(`${getSelectedMonth()}24`, ((expensesInfo) => {
-	console.log("cv 555", getSelectedMonth());
 	if(expensesInfo){
+		
+		//for account****************
 		const accountTotals = calculateAccountTotals(expensesInfo);
-		const keyValueObject = objectToKeyValuePairs(accountTotals);
+		const keyValueAccountObject = objectToKeyValuePairs(accountTotals);
 
-		//bar chart
-		optionsProfileVisit.xaxis.categories = keyValueObject.keys
-		optionsProfileVisit.series = [{name: "Account", data: keyValueObject.values}]
+		//account bar chart
+		optionsProfileVisit.xaxis.categories = keyValueAccountObject.keys
+		optionsProfileVisit.series = [{name: "Account", data: keyValueAccountObject.values}]
 		var janAccountChart = new ApexCharts(document.querySelector("#account-bar-chart"), optionsProfileVisit);
 		janAccountChart.render();
 
-		//Pie chart
-		optionsVisitorsProfile.series = keyValueObject.values
-		optionsVisitorsProfile.labels = keyValueObject.keys
+		//account Pie chart
+		optionsVisitorsProfile.series = keyValueAccountObject.values
+		optionsVisitorsProfile.labels = keyValueAccountObject.keys
 		var chartVisitorsProfile = new ApexCharts(document.getElementById('account-pie-chart'), optionsVisitorsProfile)
 		chartVisitorsProfile.render()
+
+		//for category***************
+		const categoryTotals = calculateCategoryTotals(expensesInfo);
+		const keyValueCategoryObject = objectToKeyValuePairs(categoryTotals);
+
+		//account bar chart
+		optionsProfileVisit.xaxis.categories = keyValueCategoryObject.keys
+		optionsProfileVisit.series = [{name: "Account", data: keyValueCategoryObject.values}]
+		var janAccountChart = new ApexCharts(document.querySelector("#category-bar-chart"), optionsProfileVisit);
+		janAccountChart.render();
+		
+		//account Pie chart
+		optionsVisitorsProfile.series = keyValueCategoryObject.values
+		optionsVisitorsProfile.labels = keyValueCategoryObject.keys
+		var chartVisitorsProfile = new ApexCharts(document.getElementById('category-pie-chart'), optionsVisitorsProfile)
+		chartVisitorsProfile.render()
+
+		//for daily***************
+		const dailyExpensesInfo = expensesInfo.filter( item => item.account === "Daily")
+		const dailyCategoryTotals = calculateCategoryTotals(dailyExpensesInfo);
+		const keyValueDailyCategoryObject = objectToKeyValuePairs(dailyCategoryTotals);
+		console.log("cv 111", expensesInfo);
+		console.log("cv 222", categoryTotals);
+		console.log("cv 333", keyValueCategoryObject);
+		console.log("cv 444", dailyExpensesInfo);
+
+		//account bar chart
+		optionsProfileVisit.xaxis.categories = keyValueDailyCategoryObject.keys
+		optionsProfileVisit.series = [{name: "Account", data: keyValueDailyCategoryObject.values}]
+		var janAccountChart = new ApexCharts(document.querySelector("#daily-category-bar-chart"), optionsProfileVisit);
+		janAccountChart.render();
+		
+		//account Pie chart
+		optionsVisitorsProfile.series = keyValueDailyCategoryObject.values
+		optionsVisitorsProfile.labels = keyValueDailyCategoryObject.keys
+		var chartVisitorsProfile = new ApexCharts(document.getElementById('daily-category-pie-chart'), optionsVisitorsProfile)
+		chartVisitorsProfile.render()
+
 
 	}
 }))

@@ -33,6 +33,19 @@ function calculateAccountTotals(data) {
     return accountTotals;
 }
 
+function calculateCategoryTotals(data) {
+    const categoryTotals = {};
+    for (const item of data) {
+      const category = item.category;
+      const amount = parseInt(item.amount, 10); 
+      if (!categoryTotals[category]) {
+        categoryTotals[category] = 0;
+      }
+      categoryTotals[category] += amount;
+    }
+    return categoryTotals;
+}
+
 
 function objectToKeyValuePairs(obj) {
     return {
