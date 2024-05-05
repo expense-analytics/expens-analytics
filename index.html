@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
 
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/simple-datatables/style.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="shortcut icon" href="assets/images/favicon.html" type="image/x-icon">
@@ -53,8 +54,11 @@
                 </a>
             </header>
 
+            <span id="main-header">
+            </span>
+
             <div class="page-heading">
-                <h3>Account Statistics</h3>
+                <h4>Account Statistics</h4>
             </div>
             <div class="page-content">
                 <section class="row">
@@ -62,9 +66,6 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <h4>Bar Chart</h4>
-                                    </div>
                                     <div class="card-body">
                                         <div id="account-pie-chart"></div>
                                     </div>
@@ -75,9 +76,6 @@
                     </div>
                     <div class="col-12 col-lg-3">
                         <div class="card">
-                            <div class="card-header">
-                                <h4>Pie Chart</h4>
-                            </div>
                             <div class="card-body">
                                 <div id="account-bar-chart"></div>
                             </div>
@@ -87,7 +85,7 @@
             </div>
 
             <div class="page-heading">
-                <h3>Category Statistics</h3>
+                <h4>Category Statistics</h4>
             </div>
             <div class="page-content">
                 <section class="row">
@@ -95,9 +93,6 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <h4>Bar Chart</h4>
-                                    </div>
                                     <div class="card-body">
                                         <div id="category-pie-chart"></div>
                                     </div>
@@ -108,9 +103,6 @@
                     </div>
                     <div class="col-12 col-lg-3">
                         <div class="card">
-                            <div class="card-header">
-                                <h4>Pie Chart</h4>
-                            </div>
                             <div class="card-body">
                                 <div id="category-bar-chart"></div>
                             </div>
@@ -120,7 +112,7 @@
             </div>
 
             <div class="page-heading">
-                <h3>Daily Category Statistics</h3>
+                <h4>Daily Category Statistics</h4>
             </div>
             <div class="page-content">
                 <section class="row">
@@ -128,9 +120,6 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <h4>Bar Chart</h4>
-                                    </div>
                                     <div class="card-body">
                                         <div id="daily-category-pie-chart"></div>
                                     </div>
@@ -141,9 +130,6 @@
                     </div>
                     <div class="col-12 col-lg-3">
                         <div class="card">
-                            <div class="card-header">
-                                <h4>Pie Chart</h4>
-                            </div>
                             <div class="card-body">
                                 <div id="daily-category-bar-chart"></div>
                             </div>
@@ -151,6 +137,75 @@
                     </div>
                 </section>
             </div>
+
+            <div class="page-heading">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-12 col-md-6 order-md-1 order-last">
+                            <h3>DataTable</h3>
+                            <p class="text-subtitle text-muted">For user to check they list</p>
+                        </div>
+                        <div class="col-12 col-md-6 order-md-2 order-first">
+                            <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">DataTable</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <section class="section">
+                    <div class="card">
+                        <div class="card-header">
+                            Simple Datatable
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped" id="table1">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Account</th>
+                                        <th>Category</th>
+                                        <th>Amount</th>
+                                        <th>Date</th>
+                                        <th>Note</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="expensesInfo">
+                                    <!-- <tr>
+                                        <td>dfgdf</td>
+                                        <td>dfgdf</td>
+                                        <td>dfgdfg</td>
+                                        <td>dfgded</td>
+                                        <td>bvbd</td>
+                                        <td>fdgert</td>
+                                    </tr>
+                                    <tr>
+                                        <td>888</td>
+                                        <td>dfgdf</td>
+                                        <td>dfgdfg</td>
+                                        <td>dfgded</td>
+                                        <td>bvbd</td>
+                                        <td>fdgert</td>
+                                    </tr>
+                                    <tr>
+                                        <td>dfgdf</td>
+                                        <td>dfgdf</td>
+                                        <td>dfgdfg</td>
+                                        <td>dfgded</td>
+                                        <td>bvbd</td>
+                                        <td>fdgert</td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+            
 
         </div>
     </div>
@@ -211,6 +266,53 @@
     <script src="assets/js/pages/dashboard.js"></script>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/vendors/simple-datatables/simple-datatables.js"></script>
+    <script>
+        fetchMonthExpenses(`${getSelectedMonth()}24`, ((expensesInfo) => {
+            if(expensesInfo){
+                
+                const monthTotalAmount = expensesInfo.reduce((acc, item) => acc + parseInt(item.amount), 0);
+
+                const monthMapping = {
+                    jan: "January",
+                    feb: "February",
+                    mar: "March",
+                    apr: "April",
+                    may: "May",
+                    jun: "June",
+                    jul: "July",
+                    aug: "August",
+                    sep: "September",
+                    oct: "October",
+                    nov: "November",
+                    dec: "December"
+                };
+
+                document.getElementById("main-header").innerHTML = `
+                <div class="page-heading">
+                    <h2>${monthMapping[getSelectedMonth()]} Statistics: ${monthTotalAmount.toLocaleString()}</h2>
+                </div>
+                `
+
+
+                document.getElementById("expensesInfo").innerHTML = expensesInfo.map((data, i) => {
+                    return `
+                        <tr>
+                            <td>${i+1}</td>
+                            <td>${data.account}</td>
+                            <td>${data.category}</td>
+                            <td>${data.amount}</td>
+                            <td>${data.date}</td>
+                            <td>${data.note}</td>
+                        </tr>
+                    `
+                })
+                let table1 = document.querySelector('#table1');
+                let dataTable = new simpleDatatables.DataTable(table1);
+            }
+        }))
+    </script>
 </body>
 
 

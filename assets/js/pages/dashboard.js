@@ -141,10 +141,6 @@ fetchMonthExpenses(`${getSelectedMonth()}24`, ((expensesInfo) => {
 		const dailyExpensesInfo = expensesInfo.filter( item => item.account === "Daily")
 		const dailyCategoryTotals = calculateCategoryTotals(dailyExpensesInfo);
 		const keyValueDailyCategoryObject = objectToKeyValuePairs(dailyCategoryTotals);
-		console.log("cv 111", expensesInfo);
-		console.log("cv 222", categoryTotals);
-		console.log("cv 333", keyValueCategoryObject);
-		console.log("cv 444", dailyExpensesInfo);
 
 		//account bar chart
 		optionsProfileVisit.xaxis.categories = keyValueDailyCategoryObject.keys
