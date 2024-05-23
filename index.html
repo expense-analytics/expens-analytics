@@ -62,7 +62,14 @@
             </div>
             <div class="page-content">
                 <section class="row">
-                    <div class="col-12 col-lg-9">
+                    <div class="col-12 col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="account-bar-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
@@ -70,14 +77,6 @@
                                         <div id="account-pie-chart"></div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                      
-                    </div>
-                    <div class="col-12 col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div id="account-bar-chart"></div>
                             </div>
                         </div>
                     </div>
@@ -89,7 +88,14 @@
             </div>
             <div class="page-content">
                 <section class="row">
-                    <div class="col-12 col-lg-9">
+                    <div class="col-12 col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="category-bar-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
@@ -97,14 +103,6 @@
                                         <div id="category-pie-chart"></div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                      
-                    </div>
-                    <div class="col-12 col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div id="category-bar-chart"></div>
                             </div>
                         </div>
                     </div>
@@ -116,7 +114,14 @@
             </div>
             <div class="page-content">
                 <section class="row">
-                    <div class="col-12 col-lg-9">
+                    <div class="col-12 col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="daily-category-bar-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
@@ -124,14 +129,6 @@
                                         <div id="daily-category-pie-chart"></div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                      
-                    </div>
-                    <div class="col-12 col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div id="daily-category-bar-chart"></div>
                             </div>
                         </div>
                     </div>
@@ -173,30 +170,6 @@
                                     </tr>
                                 </thead>
                                 <tbody id="expensesInfo">
-                                    <!-- <tr>
-                                        <td>dfgdf</td>
-                                        <td>dfgdf</td>
-                                        <td>dfgdfg</td>
-                                        <td>dfgded</td>
-                                        <td>bvbd</td>
-                                        <td>fdgert</td>
-                                    </tr>
-                                    <tr>
-                                        <td>888</td>
-                                        <td>dfgdf</td>
-                                        <td>dfgdfg</td>
-                                        <td>dfgded</td>
-                                        <td>bvbd</td>
-                                        <td>fdgert</td>
-                                    </tr>
-                                    <tr>
-                                        <td>dfgdf</td>
-                                        <td>dfgdf</td>
-                                        <td>dfgdfg</td>
-                                        <td>dfgded</td>
-                                        <td>bvbd</td>
-                                        <td>fdgert</td>
-                                    </tr> -->
                                 </tbody>
                             </table>
                             
@@ -250,6 +223,27 @@
                             <a href="index.html?month=may" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>May</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item ${getSelectedMonth() === "jun" ? "active" : ""} ">
+                            <a href="index.html?month=jun" class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span>Jun</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item ${getSelectedMonth() === "jul" ? "active" : ""} ">
+                            <a href="index.html?month=jul" class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span>Jul</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item ${getSelectedMonth() === "aug" ? "active" : ""} ">
+                            <a href="index.html?month=aug" class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span>Aug</span>
                             </a>
                         </li>
 
