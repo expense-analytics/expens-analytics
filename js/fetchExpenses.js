@@ -46,7 +46,7 @@ function calculateCategoryTotals(data) {
     return categoryTotals;
 }
 
-
+// test commit
 function objectToKeyValuePairs(obj) {
     return {
       keys: Object.keys(obj),
