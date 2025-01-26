@@ -109,8 +109,17 @@
                 </section>
             </div>
 
-            <div class="page-heading">
-                <h4>Daily Category Statistics</h4>
+            <div id="account-category-stats">
+                <div class="page-heading">
+                    <h4 id="category-heading"></h4>
+                </div>
+                
+                <div>
+                    <label for="account-select">Select an Account:</label>
+                    <select id="account-select">
+                        <option value="" disabled selected>Select an account</option>
+                    </select>
+                </div>
             </div>
             <div class="page-content">
                 <section class="row">
@@ -155,7 +164,7 @@
                 <section class="section">
                     <div class="card">
                         <div class="card-header">
-                            Simple Datatable
+                            Datatable
                         </div>
                         <div class="card-body">
                             <table class="table table-striped" id="table1">

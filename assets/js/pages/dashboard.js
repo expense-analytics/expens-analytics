@@ -104,6 +104,15 @@ let optionsIndonesia = {
 
 fetchMonthExpenses(`${getSelectedMonth()}24`, ((expensesInfo) => {
 	if(expensesInfo){
+
+		const allAccounts = [...new Set(expensesInfo.map(item => item.account))];
+		localStorage.setItem("accounts", allAccounts)
+		const selectedAccount = localStorage.getItem("selectedAccount")
+		const isAccountAvailable = allAccounts.includes(selectedAccount)
+		if(!selectedAccount || isAccountAvailable){
+			localStorage.setItem("selectedAccount", allAccounts[0])
+		}
+		populateDropdown(allAccounts)
 		
 		//for account****************
 		const accountTotals = calculateAccountTotals(expensesInfo);
@@ -138,7 +147,7 @@ fetchMonthExpenses(`${getSelectedMonth()}24`, ((expensesInfo) => {
 		chartVisitorsProfile.render()
 
 		//for daily***************
-		const dailyExpensesInfo = expensesInfo.filter( item => item.account === "Daily")
+		const dailyExpensesInfo = expensesInfo.filter( item => item.account === localStorage.getItem("selectedAccount"))
 		const dailyCategoryTotals = calculateCategoryTotals(dailyExpensesInfo);
 		const keyValueDailyCategoryObject = objectToKeyValuePairs(dailyCategoryTotals);
 

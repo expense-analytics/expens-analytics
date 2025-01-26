@@ -46,7 +46,7 @@ function calculateCategoryTotals(data) {
     return categoryTotals;
 }
 
-// test commit
+
 function objectToKeyValuePairs(obj) {
     return {
       keys: Object.keys(obj),
@@ -63,4 +63,34 @@ function setSelectedMonth() {
 
 function getSelectedMonth() {
     return localStorage.getItem('selectedMonth') || "jan"
+}
+
+const populateDropdown = (accountArr) => {
+  
+  const array = accountArr; // Your account options array
+  const selectElement = document.getElementById("account-select");
+  const headingElement = document.getElementById("category-heading");
+
+  // Populate the dropdown
+  array.forEach(account => {
+    const option = document.createElement("option");
+    option.value = account;
+    option.textContent = account;
+    selectElement.appendChild(option);
+  });
+
+  // Handle dropdown change event
+  selectElement.addEventListener("change", function () {
+    const selectedAccount = this.value;
+    localStorage.setItem("selectedAccount", selectedAccount); // Save to localStorage
+    headingElement.textContent = `${selectedAccount} Category Statistics`; // Update the heading
+  });
+
+  // Set the initial heading from localStorage
+  const savedAccount = localStorage.getItem("selectedAccount");
+  if (savedAccount) {
+    headingElement.textContent = `${savedAccount} Category Statistics`;
+    selectElement.value = savedAccount; // Pre-select the saved account
+  }
+
 }
