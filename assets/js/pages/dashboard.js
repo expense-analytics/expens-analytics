@@ -109,7 +109,7 @@ fetchMonthExpenses(`${getSelectedMonth()}24`, ((expensesInfo) => {
 		localStorage.setItem("accounts", allAccounts)
 		const selectedAccount = localStorage.getItem("selectedAccount")
 		const isAccountAvailable = allAccounts.includes(selectedAccount)
-		if(!selectedAccount || isAccountAvailable){
+		if(!selectedAccount || !isAccountAvailable){
 			localStorage.setItem("selectedAccount", allAccounts[0])
 		}
 		populateDropdown(allAccounts)
